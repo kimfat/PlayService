@@ -7,7 +7,7 @@ import android.os.IBinder;
 
 import android.widget.Toast;
 
-class PlayService extends Service {
+public class MyService extends Service {
 
     private MediaPlayer mPlayer;
 

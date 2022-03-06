@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // используем явный вызов службы
                 startService(
-                        new Intent(MainActivity.this, PlayService.class));
+                        new Intent(MainActivity.this, MyService.class));
             }
         });
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stopService(
-                        new Intent(MainActivity.this, PlayService.class));
+                        new Intent(MainActivity.this, MyService.class));
             }
         });
     }
