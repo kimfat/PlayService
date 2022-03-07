@@ -29,8 +29,7 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(this, "Служба запущена",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Служба запущена", Toast.LENGTH_SHORT).show();
         mPlayer.start();
         return super.onStartCommand(intent, flags, startId);
     }
