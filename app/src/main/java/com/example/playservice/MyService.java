@@ -9,8 +9,7 @@ import android.widget.Toast;
 
 public class MyService extends Service {
 
-    private MediaPlayer mPlayer;
-
+    private MediaPlayer myMediaPlayer;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -20,17 +19,16 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Toast.makeText(this, "Служба создана",
-                Toast.LENGTH_SHORT).show();
-        mPlayer = MediaPlayer.create(this, R.raw.music);
-        mPlayer.setLooping(false);
+        Toast.makeText(this, "Служба создана", Toast.LENGTH_SHORT).show();
+        myMediaPlayer = MediaPlayer.create(this, R.raw.pigstep);
+        myMediaPlayer.setLooping(false);
     }
 
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "Служба запущена", Toast.LENGTH_SHORT).show();
-        mPlayer.start();
+        myMediaPlayer.start();
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -39,6 +37,6 @@ public class MyService extends Service {
         super.onDestroy();
         Toast.makeText(this, "Служба остановлена",
                 Toast.LENGTH_SHORT).show();
-        mPlayer.stop();
+        myMediaPlayer.stop();
     }
 }

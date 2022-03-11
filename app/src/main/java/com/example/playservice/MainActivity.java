@@ -17,20 +17,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button btnStart = findViewById(R.id.button_start);
-        final Button btnStop = findViewById(R.id.button_stop);
+        Button btnStart = findViewById(R.id.button_start);
+        Button btnStop = findViewById(R.id.button_stop);
 
-        // запуск службы
+
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // используем явный вызов службы
                 startService(
                         new Intent(MainActivity.this, MyService.class));
             }
         });
-
-        // остановка службы
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
